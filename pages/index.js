@@ -1018,7 +1018,6 @@ export default function Home() {
                             Add
                         </button>
                     </div>
-                    <p style={{ marginTop: 0 }}>OR</p>
                     <table className="table">
                         <tbody>
                             <tr className="table-row">
