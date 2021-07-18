@@ -139,13 +139,15 @@ export default function Home() {
     return (
         <div className="container">
             <Head>
-                <title>Packer Helper</title>
+                <title>Nimbus Packing Manager</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <div className="main">
                 <h1 className="title" style={{ marginTop: '3rem' }}>
-                    <a style={{ textDecoration: 'none' }}>Packer Helper</a>
+                    <a style={{ textDecoration: 'none' }}>
+                        Nimbus Packing Manager
+                    </a>
                 </h1>
                 <form
                     className="form"
