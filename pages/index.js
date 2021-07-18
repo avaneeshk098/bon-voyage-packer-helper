@@ -31,8 +31,14 @@ export default function Home() {
     const generateResult = async e => {
         const city = document.getElementById('city').value
         const country = document.getElementById('country').value
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&API_KEY`
-        const response = await fetch(url).catch(e => console.error(e))
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=API_KEY`
+        const response = await fetch(url).catch(e => {
+            console.error(e)
+            alert(
+                'The destination must be wrong, kindly check your destination.',
+            )
+            return
+        })
         const data = await response.json()
         const temp = Math.round(data['main'].feels_like - 273.15)
         let thick_max, thick_min
@@ -1013,25 +1019,6 @@ export default function Home() {
                         </button>
                     </div>
                     <p style={{ marginTop: 0 }}>OR</p>
-                    <button
-                        style={{
-                            width: '80%',
-                            WebkitAppearance: 'none',
-                            MozAppearance: 'none',
-                            appearance: 'none',
-                            outline: 'none',
-                            border: 'none',
-                            padding: '0.7rem',
-                            fontSize: '1.2em',
-                            background: '#0070f3',
-                            color: '#fff',
-
-                            letterSpacing: '1.5px',
-                            borderRadius: '4px',
-                        }}
-                        onClick={generateResult}>
-                        Auto-Detect from list
-                    </button>
                     <table className="table">
                         <tbody>
                             <tr className="table-row">
